@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现一个简单的模版引擎</title>
+</head>
+<body>
+    <div class="tpl">
+
+    </div>
+    <script>
+        window.onload=function () {
+            var tpl = document.getElementsByClassName('tpl')[0];
+
+            //1.replace法
+            /* function render (str, data) {
+                const reg = /{{([a-zA-Z$_][a-zA-Z$_0-9\.]*)}}/g;
+
+                return str.replace(reg, (match, p) => {
+                    // console.log(match);
+                    // console.log(p);
+                    const paths = p.split(' ');
+                    console.log(paths);
+
+                    let result = data;
+                    //  console.log(result);
+
+                    while (paths.length > 0)
+                    {
+                        result = result[paths.shift()];
+                    }
+                    return String(result) || match;
+                })
+            }
+            var result=render('我是:{{name}},年龄:{{age}},性别:{{sex}}',{name:'张三', age: 18 , sex: '男'});
+ */
+
+            //2.字符串模版
+
+            function render(str,data) {
+                return str
+            }
+            var d={ name: '张三', age: 18, sex: '男' };
+            var st= `我是:${d.name},年龄:${d.age},性别:${d.sex}`
+            var result= render(st,d);
+            console.log(result);
+            tpl.innerHTML = result;
+        }
+        
+    </script>
+</body>
+</html>

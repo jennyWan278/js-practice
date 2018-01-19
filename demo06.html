@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算账户余额</title>
+</head>
+<body>
+    <script>
+        var s= "我的账户余额:2,235,467.20";
+        var i=s.indexOf(':');
+        var m=s.substring(i+1);
+        var arr=m.split(',');
+        var nums=arr.join('');
+        var num=Number(nums);
+        var t=typeof num;
+        var ty=typeof nums;
+        console.log(t);
+        console.log(num);
+        console.log(ty);
+        console.log(nums);
+        console.log(arr);
+        console.log(m);
+        console.log(i);
+        // var numb=string.match(re);
+        // var a=typeof numb;
+        // console.log(numb);
+        // console.log(a);
+
+        // var numbe= parseInt(numb);
+        // var b=typeof numbe;
+        // console.log(b);
+
+        // console.log(numbe);
+    </script>
+</body>
+</html>

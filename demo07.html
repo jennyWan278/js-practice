@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建一个bindData</title>
+</head>
+<body>
+    <script>
+        var obj = { x: 1, y: 2 };
+
+        function event() {
+            console.log('obj的值发生改变');
+        }
+
+        function bindData (o,e) {
+            Object.observe(o, e);
+        }
+        
+        bindData(obj, event);
+
+    </script>
+</body>
+
+</html>

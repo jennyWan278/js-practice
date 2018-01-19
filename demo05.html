@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>将rgb转化为hex</title>
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            function rgb(x,y,z) {
+                // rgb(x, y, z)
+                var color=[x,y,z];
+                console.log(color);
+                // var color = r.toString().match(/\d+/g); // 把 x,y,z 推送到 color 数组里
+                // console.log(color);
+                var hex = "#";
+
+                for (var i = 0; i < 3; i++) {
+                    // 'Number.toString(16)' 是JS默认能实现转换成16进制数的方法.
+                    // 如果结果是一位数，就在前面补零。例如： A变成0A
+                    hex += ("0" + color[i].toString(16)).slice(-2);
+                }
+                return hex;
+            };
+            var rg=rgb(0,0,0);  //#e9d4dd
+            console.log(rg);
+        }
+    </script>
+</body>
+
+</html>

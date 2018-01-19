@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>将任意长的数字变成逗号分格</title>
+</head>
+<body>
+    <input type="text" name="num" id="num">
+    <p class="show"></p>
+
+    <script>
+        window.onload = function () {
+            var num= document.getElementById('num');
+            var numVal = num.value;           
+            num.onblur = parseToMoney(numVal);
+            console.log(parseToMoney(numVal));
+        
+            function parseToMoney (val) {
+                var valSp= val.split('.');
+                var valPre= valSp[0];
+                var valAft = valSp.length>1 ? '.'+ valSp[1]:'';
+                console.log(valPre);
+                var re=/(\d+)(\d{3})/;
+                while(re.test(valPre)) {
+                    valPre=valPre.replace(re,'$1'+','+'$2');
+                }
+                return valPre+valAft;          
+            }
+            
+           
+            
+            /* var pVal = document.getElementsByClassName('show')[0];
+            pVal.innerHTML = val;
+            numVal = ''; */
+            // var value = val.split('.')[0];
+
+        }
+    </script>
+</body>
+</html>

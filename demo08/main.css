@@ -1,0 +1,44 @@
+.Pagination-button, .Pagination-submit {
+    display: inline-block;
+    padding: 0 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 25px;
+    color: #666;
+    font-size: 10px;
+    cursor: pointer;
+
+    /*禁止选中文字*/
+    -moz-user-select: none;
+    -o-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    }
+.Pagination-info {
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 25px;
+    color: #666;
+    font-size: 10px;
+}
+
+.Pagination-input {
+    display: inline-block;
+    color: #666;
+    font-size: 10px;
+}
+
+input { width: 30px; }
+
+.Pagination-button.active {
+    background-color: #019ce4 !important;
+    color: #fff !important;
+}
+.Pagination-button.disable {
+    color: #ccc;
+    border: 1px solid #ccc; 
+    cursor: not-allowed;
+}

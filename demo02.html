@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>将任意长的数字变成逗号分格</title>
+</head>
+
+<body>
+    <input type="text" name="num" id="num">
+    <p class="show"></p>
+
+    <script>
+        window.onload = function () {
+           var url = 'http://www.domain.com/?user=anonymous&id=123&id=456&city=%E5%8C%97%E4%BA%AC&d&enabled';
+            function parseToMoney(url) {
+                var urlArr=url.split('?');
+                var urlPre= urlArr[0];
+                var urlAft = urlArr[1];
+                var key= urlAft.split('&');
+                var u={};
+                for(var i=0;i<key.length;i++) {
+                    var urls=key[i].split('=');
+                    var f=urls[0];
+                    u[f]=urls[1];
+                }
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

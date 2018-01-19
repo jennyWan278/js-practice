@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>处理字符串</title>
+</head>
+
+<body>
+    <input type="text" name="num" id="num">
+    <p class="show"></p>
+
+    <script>
+        window.onload = function () {
+            var num = document.getElementById('num');
+            var numVal = num.value;
+            num.onblur = str(numVal);
+            
+
+            function str(val) {
+                var re1=/(^\w*?)([1-9]*$)/;
+                var relArr= re1.exec(val);
+                var pre= re1.exec(val)[1];
+                var last=re1.exec(val)[2];
+                if (last != null) {
+                    var r, re;
+                    re = /\d*/; //\d表示数字
+                    r = last.match(re);
+                    if(r==last)
+                    {
+                        last++;
+                    }
+                    else{
+                        last = last + '1'
+                    }
+                }
+                var value=pre+last; 
+                return value;         
+            }
+
+
+
+           
+        }
+    </script>
+</body>
+
+</html>

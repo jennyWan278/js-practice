@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字符串实例</title>
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+
+    <script src="utils.js"></script>
+    <script src="page.js"></script>
+
+</head>
+    <div id="show1"></div>
+    <hr>
+    <div id="page1"></div>
+<body>
+    <script>
+        const
+            page1 = pagination ('#page1'),
+            renderPage1 = (curPage, cb) => {
+                page1.render({
+                    currentPage: curPage || 1, totalPage: 100,
+                    toPage(page_index) {
+                        cb && cb({ page: page_index })
+                    }
+                })
+            };
+
+        createPage1({ page: 50 });
+
+        function createPage1 ({page}) {
+            document.querySelector('#show1').textContent = `第 ${page} 页`
+            renderPage1(page, createPage1);
+        }
+        </script>
+    </body>
+    
+    </html>
+
+    </script>
+</body>
+
+</html>

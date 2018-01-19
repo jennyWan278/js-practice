@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>页码跳转</title>
+    
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    
+    <script src="main.js"></script>
+    <script src="page.js"></script>
+
+</head>
+<body>
+    <div id="show1">第 1 页</div>
+    <hr>
+    <div id="page1">
+        <!-- <div class="pagiantion">
+            <span class="Pagination-button disable" ref="headBtn">首页</span>
+            <span class="Pagination-button" ref="prevBtn">上一页</span>
+            <span class="Pagination-info">...</span>
+            <span class="Pagination-button" ref=" pageBtn ">1</span>
+            <span class="Pagination-button" ref=" pageBtn ">2</span>
+            <span class="Pagination-button active">3</span>
+            <span class="Pagination-button" ref=" pageBtn ">4</span>
+            <span class="Pagination-button" ref=" pageBtn ">5</span>
+            <span class="Pagination-info">...</span>
+            <span class="Pagination-button" ref="nextBtn">下一页</span>
+            <span class="Pagination-button" ref="tailBtn">尾页</span>
+            <span class="Pagination-info">共100页</span>
+            <span class="Pagination-input">到第
+                <input type="text" ref="jumpInput"> 页</span>
+            <span class="Pagination-submit" ref="jumpBtn">确定</span>
+        </div> -->
+    </div>
+
+    <script>
+        const
+            page1 = pagination('#page1'),
+            renderPage1 = (curPage, cb) => {
+                page1.render({        //调用render方法，传入初始配置
+                    currentPage: curPage || 1, 
+                    totalPage: 100,
+                    toPage(page_index) {
+                        cb && cb({ page: page_index })
+                    }
+                })
+            };
+
+            function createPage1({ page }) {
+                document.querySelector('#show1').textContent = `第 ${page} 页`
+                renderPage1(page, createPage1);
+            }
+
+            createPage1({ page: 50 });
+    </script>
+</body>
+</html>
